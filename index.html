@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WashFlow | Ultimate Car Care Manager</title>
+    <title>CarWash 76 | Учёт мойки авто</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
     <style>
-        /* Сброс и базовые стили */
         * {
             margin: 0;
             padding: 0;
@@ -32,7 +31,6 @@
             animation: fadeIn 0.8s ease-out;
         }
         
-        /* Анимации */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
@@ -49,19 +47,11 @@
             100% { box-shadow: 0 0 0 0 rgba(100, 150, 255, 0); }
         }
         
-        @keyframes itemMove {
-            0% { transform: scale(1); }
-            50% { transform: scale(0.95); }
-            100% { transform: scale(1); }
-        }
-        
-        /* Хедер */
         header {
             text-align: center;
             margin-bottom: 50px;
             padding-bottom: 30px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-            position: relative;
         }
         
         .logo {
@@ -80,11 +70,8 @@
             font-size: 1.2rem;
             color: #a0a0c0;
             font-weight: 300;
-            letter-spacing: 2px;
-            text-transform: uppercase;
         }
         
-        /* Вкладки */
         .tabs-container {
             background: rgba(20, 20, 28, 0.8);
             backdrop-filter: blur(10px);
@@ -107,24 +94,7 @@
             border-radius: 12px;
             cursor: pointer;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
-            position: relative;
-            overflow: hidden;
             margin: 0 5px;
-        }
-        
-        .tab-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(138, 158, 255, 0.1), transparent);
-            transition: left 0.7s ease;
-        }
-        
-        .tab-btn:hover::before {
-            left: 100%;
         }
         
         .tab-btn:hover {
@@ -139,7 +109,6 @@
             animation: pulse 2s infinite;
         }
         
-        /* Контент вкладок */
         .tab-content {
             display: none;
             animation: slideIn 0.5s ease-out;
@@ -167,10 +136,8 @@
             height: 8px;
             background: #6c7de8;
             border-radius: 50%;
-            animation: pulse 2s infinite;
         }
         
-        /* Алгоритм мойки */
         .algorithm-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -184,29 +151,12 @@
             border: 1px solid rgba(255, 255, 255, 0.05);
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
             position: relative;
-            overflow: hidden;
         }
         
         .step-card:hover {
             transform: translateY(-10px);
             border-color: rgba(108, 125, 232, 0.3);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-        }
-        
-        .step-card::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, #6c7de8, #8a9eff);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        
-        .step-card:hover::after {
-            opacity: 1;
         }
         
         .step-number {
@@ -263,28 +213,6 @@
             font-size: 1.2rem;
         }
         
-        /* Химия */
-        .chemistry-switch-btn {
-            background: rgba(108, 125, 232, 0.1);
-            border: 1px solid rgba(138, 158, 255, 0.3);
-            color: #8a9eff;
-            padding: 12px 24px;
-            border-radius: 10px;
-            cursor: pointer;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-left: auto;
-        }
-        
-        .chemistry-switch-btn:hover {
-            background: rgba(138, 158, 255, 0.2);
-            transform: translateY(-2px);
-        }
-        
         .chemistry-header {
             display: flex;
             align-items: center;
@@ -304,12 +232,6 @@
             border: 1px solid rgba(255, 255, 255, 0.05);
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
             position: relative;
-            overflow: hidden;
-            animation: fadeIn 0.5s ease-out;
-        }
-        
-        .chem-item.moving {
-            animation: itemMove 0.5s ease;
         }
         
         .chem-item:hover {
@@ -326,7 +248,6 @@
             border-radius: 20px;
             font-size: 0.85rem;
             font-weight: 600;
-            letter-spacing: 0.5px;
         }
         
         .status-have {
@@ -380,12 +301,6 @@
             cursor: pointer;
             border: 3px solid #0f0f13;
             box-shadow: 0 0 10px rgba(108, 125, 232, 0.5);
-            transition: all 0.2s ease;
-        }
-        
-        .stock-slider::-webkit-slider-thumb:hover {
-            transform: scale(1.2);
-            box-shadow: 0 0 15px rgba(108, 125, 232, 0.7);
         }
         
         .stock-value {
@@ -420,7 +335,6 @@
             transform: rotate(90deg);
         }
         
-        /* Журнал */
         .stats-cards {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -455,8 +369,6 @@
         .stat-label {
             font-size: 1.1rem;
             color: #a0a0c0;
-            text-transform: uppercase;
-            letter-spacing: 1px;
         }
         
         .add-wash-btn {
@@ -508,15 +420,10 @@
             color: #d0d0e0;
         }
         
-        .history-table tr {
-            transition: all 0.3s ease;
-        }
-        
         .history-table tr:hover {
             background: rgba(138, 158, 255, 0.05);
         }
         
-        /* Футер */
         footer {
             text-align: center;
             margin-top: 80px;
@@ -526,14 +433,13 @@
             font-size: 0.95rem;
         }
         
-        /* Адаптивность */
-        @media (max-width: 1100px) {
+        @media (max-width: 768px) {
             .container {
                 padding: 20px;
             }
             
             .logo {
-                font-size: 2.8rem;
+                font-size: 2.3rem;
             }
             
             .tabs-container {
@@ -546,29 +452,9 @@
                 padding: 15px 25px;
                 margin-bottom: 5px;
             }
-        }
-        
-        @media (max-width: 768px) {
+            
             .algorithm-grid, .chemistry-container, .stats-cards {
                 grid-template-columns: 1fr;
-            }
-            
-            .logo {
-                font-size: 2.3rem;
-            }
-            
-            .section-title {
-                font-size: 1.8rem;
-            }
-            
-            .chemistry-header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 20px;
-            }
-            
-            .chemistry-switch-btn {
-                margin-left: 0;
             }
         }
     </style>
@@ -576,31 +462,29 @@
 <body>
     <div class="container">
         <header>
-            <div class="logo">WASHFLOW</div>
-            <div class="tagline">Ultimate Car Care Management System</div>
+            <div class="logo">CARWASH 76</div>
+            <div class="tagline">Персональная система учёта мойки автомобиля</div>
         </header>
 
         <!-- Вкладки -->
         <div class="tabs-container">
-            <button class="tab-btn active" data-tab="algorithm">Wash Algorithm</button>
-            <button class="tab-btn" data-tab="chemistry">My Chemistry</button>
-            <button class="tab-btn" data-tab="journal">Wash Log</button>
+            <button class="tab-btn active" data-tab="algorithm">Алгоритм мойки</button>
+            <button class="tab-btn" data-tab="chemistry">Моя химия</button>
+            <button class="tab-btn" data-tab="journal">Журнал моек</button>
         </div>
 
         <!-- Вкладка 1: Алгоритм -->
         <div class="tab-content active" id="algorithm">
-            <h2 class="section-title">My Wash Algorithm</h2>
-            <div class="algorithm-grid" id="algorithm-steps">
-                <!-- Сгенерируется через JS -->
-            </div>
+            <h2 class="section-title">Мой алгоритм мойки</h2>
+            <div class="algorithm-grid" id="algorithm-steps"></div>
         </div>
 
         <!-- Вкладка 2: Химия -->
         <div class="tab-content" id="chemistry">
             <div class="chemistry-header">
-                <h2 class="section-title">My Chemistry Inventory</h2>
+                <h2 class="section-title">Моя автохимия</h2>
                 <button class="chemistry-switch-btn" id="show-all">
-                    <span>Show All Items</span>
+                    <span>Показать все</span>
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M16 17l5-5-5-5M19 12H9"/>
                     </svg>
@@ -609,19 +493,15 @@
             
             <h3 style="color: #4caf50; margin-bottom: 25px; font-size: 1.5rem; display: flex; align-items: center; gap: 10px;">
                 <div style="width: 12px; height: 12px; background: #4caf50; border-radius: 50%;"></div>
-                In Stock
+                В наличии
             </h3>
-            <div class="chemistry-container" id="have-list">
-                <!-- Химия "В наличии" -->
-            </div>
+            <div class="chemistry-container" id="have-list"></div>
             
             <h3 style="color: #f44336; margin: 50px 0 25px; font-size: 1.5rem; display: flex; align-items: center; gap: 10px;">
                 <div style="width: 12px; height: 12px; background: #f44336; border-radius: 50%;"></div>
-                Out of Stock
+                Нет в наличии
             </h3>
-            <div class="chemistry-container" id="need-list">
-                <!-- Химия "Нет в наличии" -->
-            </div>
+            <div class="chemistry-container" id="need-list"></div>
         </div>
 
         <!-- Вкладка 3: Журнал -->
@@ -629,15 +509,15 @@
             <div class="stats-cards">
                 <div class="stat-card">
                     <div class="stat-number" id="total-washes">0</div>
-                    <div class="stat-label">Total Washes</div>
+                    <div class="stat-label">Всего моек</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-number" id="this-month">0</div>
-                    <div class="stat-label">This Month</div>
+                    <div class="stat-label">В этом месяце</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number" id="avg-time">0</div>
-                    <div class="stat-label">Avg. Time (min)</div>
+                    <div class="stat-number" id="avg-time">90</div>
+                    <div class="stat-label">Среднее время (мин)</div>
                 </div>
             </div>
             
@@ -646,36 +526,32 @@
                     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M12 5v14M5 12h14"/>
                     </svg>
-                    Log Today's Wash
+                    Добавить мойку сегодня
                 </span>
             </button>
             
-            <h2 class="section-title">Wash History</h2>
+            <h2 class="section-title">История моек</h2>
             <div class="history-table-container">
                 <table class="history-table">
                     <thead>
                         <tr>
-                            <th>Date</th>
-                            <th>Wash Type</th>
-                            <th>Notes</th>
-                            <th>Duration</th>
+                            <th>Дата</th>
+                            <th>Тип мойки</th>
+                            <th>Примечания</th>
+                            <th>Время</th>
                         </tr>
                     </thead>
-                    <tbody id="wash-history">
-                        <!-- История моек -->
-                    </tbody>
+                    <tbody id="wash-history"></tbody>
                 </table>
             </div>
         </div>
 
         <footer>
-            <p>WashFlow © 2023 | Personal Car Care Management System | All data stored locally in your browser</p>
-            <p style="margin-top: 10px; font-size: 0.85rem; color: #606080;">Open this HTML file from any device to access your data</p>
+            <p>CarWash 76 © 2023 | Персональная система учёта мойки | Все данные хранятся в вашем браузере</p>
         </footer>
     </div>
 
     <script>
-        // Данные алгоритма
         const algorithmSteps = [
             "Намочить всю машину водой",
             "Пена бесконтактная: Нанести → ждать 3-5 мин → смыть",
@@ -686,7 +562,6 @@
             "Финиш: Колёса (чернитель) → салон"
         ];
 
-        // Данные химии (расширенные)
         let chemistryData = {
             have: [
                 {name: "Тряпка микрофибра", stock: 100},
@@ -714,19 +589,16 @@
             ]
         };
 
-        // Загрузка данных из LocalStorage
         let totalWashes = localStorage.getItem('totalWashes') ? parseInt(localStorage.getItem('totalWashes')) : 0;
         let washesThisMonth = localStorage.getItem('washesThisMonth') ? parseInt(localStorage.getItem('washesThisMonth')) : 0;
         let avgWashTime = localStorage.getItem('avgWashTime') ? parseInt(localStorage.getItem('avgWashTime')) : 90;
         let washHistory = localStorage.getItem('washHistory') ? JSON.parse(localStorage.getItem('washHistory')) : [];
         let checkedSteps = localStorage.getItem('checkedSteps') ? JSON.parse(localStorage.getItem('checkedSteps')) : new Array(algorithmSteps.length).fill(false);
         
-        // Загружаем химию из LocalStorage если есть
         if (localStorage.getItem('chemistryData')) {
             chemistryData = JSON.parse(localStorage.getItem('chemistryData'));
         }
 
-        // Рендер алгоритма
         function renderAlgorithm() {
             const container = document.getElementById('algorithm-steps');
             container.innerHTML = '';
@@ -742,7 +614,6 @@
                 container.appendChild(stepElement);
             });
             
-            // Обработчики для чекбоксов
             document.querySelectorAll('.step-checkbox').forEach(checkbox => {
                 checkbox.addEventListener('click', function() {
                     const index = parseInt(this.getAttribute('data-index'));
@@ -753,7 +624,6 @@
             });
         }
 
-        // Рендер химии
         function renderChemistry() {
             const haveList = document.getElementById('have-list');
             const needList = document.getElementById('need-list');
@@ -761,7 +631,6 @@
             haveList.innerHTML = '';
             needList.innerHTML = '';
             
-            // Химия в наличии
             chemistryData.have.forEach((item, index) => {
                 const itemElement = document.createElement('div');
                 itemElement.className = 'chem-item';
@@ -769,17 +638,17 @@
                 itemElement.setAttribute('data-index', index);
                 
                 itemElement.innerHTML = `
-                    <div class="chem-status status-have">In Stock</div>
+                    <div class="chem-status status-have">В наличии</div>
                     <div class="chem-name">${item.name}</div>
                     <div class="chem-stock">
                         <div class="stock-label">
-                            <span>Stock Level</span>
+                            <span>Остаток</span>
                             <span>${item.stock}%</span>
                         </div>
                         <input type="range" min="0" max="100" value="${item.stock}" class="stock-slider" data-type="have" data-index="${index}">
-                        <div class="stock-value">${item.stock}% remaining</div>
+                        <div class="stock-value">${item.stock}% осталось</div>
                     </div>
-                    <button class="move-btn" title="Move to Out of Stock">
+                    <button class="move-btn" title="Переместить в 'Нет в наличии'">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M19 12H6M12 5l-7 7 7 7"/>
                         </svg>
@@ -789,7 +658,6 @@
                 haveList.appendChild(itemElement);
             });
             
-            // Химия отсутствует
             chemistryData.need.forEach((item, index) => {
                 const itemElement = document.createElement('div');
                 itemElement.className = 'chem-item';
@@ -797,17 +665,17 @@
                 itemElement.setAttribute('data-index', index);
                 
                 itemElement.innerHTML = `
-                    <div class="chem-status status-out">Out of Stock</div>
+                    <div class="chem-status status-out">Нет в наличии</div>
                     <div class="chem-name">${item.name}</div>
                     <div class="chem-stock">
                         <div class="stock-label">
-                            <span>Stock Level</span>
+                            <span>Остаток</span>
                             <span>${item.stock}%</span>
                         </div>
                         <input type="range" min="0" max="100" value="${item.stock}" class="stock-slider" data-type="need" data-index="${index}">
-                        <div class="stock-value">${item.stock}% remaining</div>
+                        <div class="stock-value">${item.stock}% осталось</div>
                     </div>
-                    <button class="move-btn" title="Move to In Stock">
+                    <button class="move-btn" title="Переместить в 'В наличии'">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M5 12h13M12 5l7 7-7 7"/>
                         </svg>
@@ -817,7 +685,6 @@
                 needList.appendChild(itemElement);
             });
             
-            // Обработчики для слайдеров
             document.querySelectorAll('.stock-slider').forEach(slider => {
                 slider.addEventListener('input', function() {
                     const type = this.getAttribute('data-type');
@@ -826,31 +693,24 @@
                     
                     chemistryData[type][index].stock = value;
                     
-                    // Обновляем отображение
                     const stockValue = this.parentElement.querySelector('.stock-value');
                     const stockLabel = this.parentElement.querySelector('.stock-label span:last-child');
-                    stockValue.textContent = `${value}% remaining`;
+                    stockValue.textContent = `${value}% осталось`;
                     stockLabel.textContent = `${value}%`;
                     
-                    // Сохраняем в LocalStorage
                     localStorage.setItem('chemistryData', JSON.stringify(chemistryData));
                     
-                    // Если товар в "В наличии" и закончился, перемещаем его
                     if (type === 'have' && value === 0) {
                         moveItem(type, index);
                     }
                 });
             });
             
-            // Обработчики для кнопок перемещения
             document.querySelectorAll('.move-btn').forEach(btn => {
                 btn.addEventListener('click', function() {
                     const itemElement = this.closest('.chem-item');
                     const type = itemElement.getAttribute('data-type');
                     const index = parseInt(itemElement.getAttribute('data-index'));
-                    
-                    // Анимация перемещения
-                    itemElement.classList.add('moving');
                     
                     setTimeout(() => {
                         moveItem(type, index);
@@ -859,17 +719,11 @@
             });
         }
 
-        // Функция перемещения товара между списками
         function moveItem(fromType, fromIndex) {
             const item = chemistryData[fromType][fromIndex];
-            
-            // Удаляем из текущего массива
             chemistryData[fromType].splice(fromIndex, 1);
-            
-            // Добавляем в другой массив
             const toType = fromType === 'have' ? 'need' : 'have';
             
-            // Если перемещаем в "В наличии", устанавливаем stock 50%
             if (toType === 'have') {
                 item.stock = 50;
             } else {
@@ -877,15 +731,10 @@
             }
             
             chemistryData[toType].push(item);
-            
-            // Сохраняем в LocalStorage
             localStorage.setItem('chemistryData', JSON.stringify(chemistryData));
-            
-            // Перерисовываем химию
             renderChemistry();
         }
 
-        // Рендер журнала
         function renderJournal() {
             document.getElementById('total-washes').textContent = totalWashes;
             document.getElementById('this-month').textContent = washesThisMonth;
@@ -898,17 +747,17 @@
                 historyTable.innerHTML = `
                     <tr>
                         <td colspan="4" style="text-align: center; padding: 50px; color: #a0a0c0;">
-                            <div style="font-size: 1.2rem; margin-bottom: 10px;">No wash history yet</div>
-                            <div style="font-size: 0.95rem;">Log your first wash using the button above!</div>
+                            <div style="font-size: 1.2rem; margin-bottom: 10px;">История моек пуста</div>
+                            <div style="font-size: 0.95rem;">Добавьте первую запись!</div>
                         </td>
                     </tr>
                 `;
             } else {
                 washHistory.forEach(record => {
                     const date = new Date(record.date);
-                    const dateStr = date.toLocaleDateString('en-US', {
-                        month: 'short',
+                    const dateStr = date.toLocaleDateString('ru-RU', {
                         day: 'numeric',
+                        month: 'long',
                         year: 'numeric'
                     });
                     
@@ -917,14 +766,13 @@
                         <td><strong>${dateStr}</strong></td>
                         <td>${record.type}</td>
                         <td>${record.notes}</td>
-                        <td>${record.duration} min</td>
+                        <td>${record.duration} мин</td>
                     `;
                     historyTable.appendChild(row);
                 });
             }
         }
 
-        // Добавление мойки
         function addWash() {
             totalWashes++;
             washesThisMonth++;
@@ -932,34 +780,30 @@
             const today = new Date();
             const washRecord = {
                 date: today.toISOString(),
-                type: "Full Algorithm Wash",
-                notes: "All steps completed",
+                type: "Полная мойка по алгоритму",
+                notes: "Все этапы выполнены",
                 duration: avgWashTime
             };
             
             washHistory.unshift(washRecord);
             if (washHistory.length > 15) washHistory = washHistory.slice(0, 15);
             
-            // Сохраняем в LocalStorage
             localStorage.setItem('totalWashes', totalWashes);
             localStorage.setItem('washesThisMonth', washesThisMonth);
             localStorage.setItem('washHistory', JSON.stringify(washHistory));
             
-            // Обновляем отображение
             renderJournal();
             
-            // Анимация успеха
             const btn = document.getElementById('add-wash');
             btn.style.background = 'linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%)';
-            btn.innerHTML = '<span style="display: flex; align-items: center; gap: 10px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Wash Logged!</span>';
+            btn.innerHTML = '<span style="display: flex; align-items: center; gap: 10px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Мойка добавлена!</span>';
             
             setTimeout(() => {
                 btn.style.background = 'linear-gradient(135deg, #4a5bcf 0%, #6c7de8 100%)';
-                btn.innerHTML = '<span style="display: flex; align-items: center; gap: 10px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>Log Today\'s Wash</span>';
+                btn.innerHTML = '<span style="display: flex; align-items: center; gap: 10px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>Добавить мойку сегодня</span>';
             }, 2000);
         }
 
-        // Переключение вкладок
         function setupTabs() {
             const tabBtns = document.querySelectorAll('.tab-btn');
             const tabContents = document.querySelectorAll('.tab-content');
@@ -968,7 +812,6 @@
                 btn.addEventListener('click', function() {
                     tabBtns.forEach(b => b.classList.remove('active'));
                     tabContents.forEach(c => c.classList.remove('active'));
-                    
                     this.classList.add('active');
                     const tabId = this.getAttribute('data-tab');
                     document.getElementById(tabId).classList.add('active');
@@ -976,64 +819,24 @@
             });
         }
 
-        // Кнопка "Show All Items"
-        function setupShowAllButton() {
-            const showAllBtn = document.getElementById('show-all');
-            let showAll = false;
-            
-            showAllBtn.addEventListener('click', function() {
-                showAll = !showAll;
-                
-                if (showAll) {
-                    this.innerHTML = '<span>Show Only In Stock</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 17l5-5-5-5M19 12H9"/></svg>';
-                    document.getElementById('need-list').style.display = 'grid';
-                } else {
-                    this.innerHTML = '<span>Show All Items</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 17l5-5-5-5M19 12H9"/></svg>';
-                    document.getElementById('need-list').style.display = 'none';
-                }
-            });
-        }
-
-        // Инициализация
         document.addEventListener('DOMContentLoaded', function() {
             setupTabs();
-            setupShowAllButton();
             renderAlgorithm();
             renderChemistry();
             renderJournal();
             
-            // Обработчик для кнопки добавления мойки
             document.getElementById('add-wash').addEventListener('click', addWash);
             
-            // Кнопка сброса алгоритма (скрытая, для теста)
-            const resetBtn = document.createElement('button');
-            resetBtn.textContent = 'Reset Algorithm';
-            resetBtn.style.cssText = `
-                position: fixed;
-                bottom: 20px;
-                right: 20px;
-                background: rgba(244, 67, 54, 0.1);
-                border: 1px solid rgba(244, 67, 54, 0.3);
-                color: #f44336;
-                padding: 10px 20px;
-                border-radius: 8px;
-                cursor: pointer;
-                font-family: 'Montserrat', sans-serif;
-                font-size: 0.9rem;
-                z-index: 1000;
-                opacity: 0.5;
-                transition: opacity 0.3s ease;
-            `;
-            resetBtn.addEventListener('mouseenter', () => resetBtn.style.opacity = '1');
-            resetBtn.addEventListener('mouseleave', () => resetBtn.style.opacity = '0.5');
-            resetBtn.addEventListener('click', function() {
-                if (confirm('Reset all algorithm checkmarks?')) {
-                    checkedSteps = new Array(algorithmSteps.length).fill(false);
-                    localStorage.setItem('checkedSteps', JSON.stringify(checkedSteps));
-                    renderAlgorithm();
+            document.getElementById('show-all').addEventListener('click', function() {
+                const needList = document.getElementById('need-list');
+                if (needList.style.display === 'none') {
+                    needList.style.display = 'grid';
+                    this.innerHTML = '<span>Скрыть отсутствующие</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 17l5-5-5-5M19 12H9"/></svg>';
+                } else {
+                    needList.style.display = 'none';
+                    this.innerHTML = '<span>Показать все</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 17l5-5-5-5M19 12H9"/></svg>';
                 }
             });
-            document.body.appendChild(resetBtn);
         });
     </script>
 </body>
